@@ -1,0 +1,42 @@
+nav {
+    background-color: #333; /* Background color for the navigation bar */
+    padding: 10px; /* Add padding to the navigation links */
+    margin-bottom: 25px;
+  }
+  
+  a {
+    color: white; /* Text color for the navigation links */
+    text-decoration: none; /* Remove underlines from the links */
+    padding: 10px 15px; /* Add padding to the links */
+    margin-right: 250px; /* Add spacing between links */
+    border-radius: 5px; /* Add rounded corners to the links */
+    margin-left: 250px;
+  }
+  
+  a:hover {
+    background-color: #555; /* Change background color on hover */
+  }
+  
+  a.active {
+    background-color: #666; /* Change background color for the active link */
+  }
+  @media screen and (max-width: 1508px) {
+    nav {
+        padding: 5px; /* Reduce padding on smaller screens */
+    }
+    
+    a {
+        margin-right: 50px; /* Remove right margin on smaller screens */
+        margin-left: 50px; /* Remove left margin on smaller screens */
+    }
+}
+  @media screen and (max-width: 768px) {
+    nav {
+        padding: 5px; /* Reduce padding on smaller screens */
+    }
+    
+    a {
+        margin-right: 0; /* Remove right margin on smaller screens */
+        margin-left: 0; /* Remove left margin on smaller screens */
+    }
+}

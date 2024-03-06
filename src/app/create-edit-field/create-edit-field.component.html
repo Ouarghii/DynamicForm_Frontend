@@ -1,0 +1,24 @@
+<h2>{{ data.isEditMode ? 'Edit Field' : 'Create Field' }}</h2>
+
+<form [formGroup]="fieldForm" (ngSubmit)="onSave()" class="form-container">
+  <div class="form-group">
+    <label for="fieldName">Field Name</label>
+    <input type="text" id="fieldName" formControlName="fieldName" required class="form-input">
+  </div>
+  <div class="form-group">
+    <label for="type">Type</label>
+    <input type="text" id="type" formControlName="type" required class="form-input">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description" class="form-textarea"></textarea>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="required" formControlName="required" class="form-checkbox">
+    <label for="required">Required</label>
+  </div>
+  <div class="button-group">
+    <button type="submit" class="form-button">{{ data.isEditMode ? 'Update' : 'Create' }}</button>
+    <button type="button" (click)="onCancel()" class="form-button">Cancel</button>
+  </div>
+</form>

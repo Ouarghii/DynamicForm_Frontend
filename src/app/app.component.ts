@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'dynamic-form-app';
+  // Define an array of navigation links
+  navLinks: { label: string, url: string }[] = [
+    { label: 'Field List', url: '/fields' },
+    { label: 'Dynamic Form', url: '/form' },
+    { label: 'Report', url: '/report' }
+  ];
 }

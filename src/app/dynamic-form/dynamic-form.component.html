@@ -1,0 +1,24 @@
+<div class="container" style="align-items: center;">
+  <div class="text">Dynamic Form</div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div *ngFor="let field of fields" class="form-row">
+      <div class="input-data">
+        <!-- Input field with form control binding -->
+        <input [type]="field.type" [formControlName]="field.fieldName" [placeholder]="field.type" />
+        <label style="margin-bottom: 30px;">{{ field.fieldName }} :</label>
+        <span class="underline"></span>
+        <!-- Display error message if field is required and empty -->
+        <div *ngIf="field.required && form.get(field.fieldName)?.hasError('required')" class="error-message">
+          <p style="color: red;font-size: 10px;">{{ field.fieldName }} is required.</p>
+        </div>
+      </div>
+    </div>
+    <div class="submit-btn">
+      <div class="input-data">
+        <!-- Submit button -->
+        <button type="submit" class="inner" [disabled]="form.invalid">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+

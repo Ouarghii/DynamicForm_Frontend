@@ -1,0 +1,37 @@
+<div *ngIf="errorMessage; else fieldList">
+    <p>{{ errorMessage }}</p>
+</div>
+
+<ng-template #fieldList>
+    <div>
+        <button (click)="openCreateFieldPopup()">Create Field</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Field Name</th>
+                <th>Type</th>
+                <th>Required</th>
+                <th>Actions</th> <!-- Add a column for actions -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let field of fields" style="margin: auto;">
+                <td style="margin: auto;">{{ field.fieldName }}</td>
+                <td style="margin: auto;">{{ field.type }}</td>
+                <td style="margin: auto;">{{ field.required ? 'Yes' : 'No' }}</td>
+                <td>
+                    <div class="button-container" style="justify-content: center;">
+                        <button class="edit-button" (click)="editField(field)">Edit</button>
+                        <button *ngIf="field.id !== undefined" class="delete-button" (click)="deleteField(field.id)">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            
+                
+                  
+            
+        </tbody>
+    </table>
+</ng-template>
+
